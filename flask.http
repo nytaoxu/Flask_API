@@ -1,0 +1,7 @@
+POST http://localhost:5000/store/herStore/item
+Content-Type: application/json
+
+{
+    "name": "gold",
+    "price": "777555"
+}
