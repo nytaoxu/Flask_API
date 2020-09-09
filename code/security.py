@@ -1,4 +1,4 @@
-from user import User
+from models.user import UserModel
 from werkzeug.security import safe_str_cmp
 
 # users = [
@@ -14,7 +14,7 @@ from werkzeug.security import safe_str_cmp
 def authenticate(username, password):
     print("authenticate() called")
     # user = username_mapping.get(username, None)
-    user = User.find_by_username(username)
+    user = UserModel.find_by_username(username)
     # print(f"username = {username}")
     # print(f"password = {password}")
 
@@ -25,9 +25,9 @@ def authenticate(username, password):
 
 
 def identity(payload):
-    print("identity() called")
+    # print("identity() called")
     print(f"payload = {payload}")
     user_id = payload["identity"]
     # print(f"user_id = {user_id}")
     # return userid_mapping.get(user_id, None)
-    return User.find_by_id(user_id)
+    return UserModel.find_by_id(user_id)
