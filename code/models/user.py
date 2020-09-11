@@ -17,7 +17,6 @@ class UserModel:
             result = cursor.execute(find_username_query, (username, ))
             row = result.fetchone()
             if row:
-                # user = cls(row[0], row[1], row[2])
                 user = cls(*row)
             else:
                 user = None
@@ -31,7 +30,6 @@ class UserModel:
             result = cursor.execute(find_id_query, (_id, ))
             row = result.fetchone()
             if row:
-                # user = cls(row[0], row[1], row[2])
                 user = cls(*row)
             else:
                 user = None
